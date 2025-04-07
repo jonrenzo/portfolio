@@ -39,7 +39,8 @@ export default {
           name: "Mojito Entertainment",
           imageUrl: "mojit",
           status:
-            "This app is a modern web application designed to enhance your movie-going experience. With a seamless and secure booking system, users can easily reserve their seats and enjoy hassle-free payments",
+            "This app is a modern web application designed to enhance your movie-going experience. " +
+              "With a seamless and secure booking system, users can easily reserve their seats and enjoy hassle-free payments",
           tech: "PHP, HTML, TailwindCSS",
           github: "https://github.com/jonrenzo/Movie-Reservation-Finals",
           demo: "",
@@ -49,13 +50,34 @@ export default {
           name: "KRY Banking",
           imageUrl: "kry",
           status:
-            "a simple banking system using VB.NET that lets users manage their accounts and transactions easily. All the data, like account details and transaction history, is stored in a database.",
+            "a simple banking system using VB.NET that lets users manage their accounts and transactions easily. " +
+              "All the data, like account details and transaction history, is stored in a database.",
           tech: "VB.NET",
           github: "https://github.com/jonrenzo/VBNET_KRY_BANKING",
           demo: "",
         },
         {
           id: 6,
+          name: "Tech Talk",
+          imageUrl: "tech_talk",
+          status: "This voice assistant app, developed using MIT App Inventor, enables users to control basic home " +
+              "appliances such as lights and fans via Wi-Fi.",
+          tech: "MIT App Inventor",
+          github: "https://github.com/jonrenzo/Tech-Talk",
+          demo: "",
+        },
+        {
+          id: 7,
+          name: "BMI Calculator Application",
+          imageUrl: "bmi",
+          status: "Built with Android Studio, this sleek app features an intuitive UI that calculates your " +
+              "Body Mass Index (BMI) based on your personal information.",
+          tech: "Android Studio, Java, XML",
+          github: "https://github.com/jonrenzo/BMI-Calculator",
+          demo: "",
+        },
+        {
+          id: 8,
           name: "Work in Progress",
           imageUrl: "inprogress",
           status: "More projects in progress. Please check back later.",

@@ -30,8 +30,8 @@ export default {
         },
         {
           id: 5,
-          name: 'NodeJS',
-          imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png',
+          name: 'Laravel',
+          imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/194_Laravel_logo_logos-1024.png',
           status: 'Beginner'
         },
         {
@@ -76,6 +76,7 @@ export default {
           imageUrl: 'https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png',
           status: 'Beginner'
         },
+
 
         
       ],
@@ -126,11 +127,12 @@ export default {
         class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
         <div class="flex justify-center">
           <img class="w-9/12 rounded-full mb-3 fadein-up"
-            src="https://i.pinimg.com/originals/55/df/67/55df675cf1db5e3c31ca8f9102420eb2.jpg" alt="avatar">
+            src="https://i.pinimg.com/736x/be/fb/5c/befb5c7de8e88f542f7253f5de74a8b1.jpg" alt="avatar">
         </div>
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Jon Renzo Toledo. Aspiring Web Developer. I am currently a 2nd Year CS Student at Pamantasan ng Lungsod ng Pasig.
+            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Jon Renzo Toledo. Aspiring Web Developer. I am currently a
+            CS Student at Pamantasan ng Lungsod ng Pasig.
             I really like learning new things and creating aesthetic and functional websites.
           </p>
           <p class="mb-3 fadein-left fadeins-2">
