@@ -78,6 +78,16 @@ export default {
         },
         {
           id: 8,
+          name: "PapaBibs Kitchen",
+          imageUrl: "pbk",
+          status: "A food ordering system with an admin page for a small food business. " +
+              "This app allows users to order food online and manage their orders efficiently.",
+          tech: "Laravel, HTML, TailwindCSS",
+          github: "https://github.com/jonrenzo/PapaBibs-Kitchen",
+          demo: "https://papabibs-kitchen-main-n1hnmi.laravel.cloud/",
+        },
+        {
+          id: 9,
           name: "Work in Progress",
           imageUrl: "inprogress",
           status: "More projects in progress. Please check back later.",
@@ -113,7 +123,7 @@ export default {
           >
             <div v-for="item in items" :key="item.id">
               <div
-                class="item-card flex flex-col items-center gap-2 rounded bg-[#1e1e1f] hover:bg-[#282828] border border-[#383838] rounded-xl text-amber-50 md:gap-3 px-5 py-5 lg:px-5"
+                  class="item-card flex flex-col justify-between items-center gap-2 rounded bg-[#1e1e1f] hover:bg-[#282828] border border-[#383838] rounded-xl text-amber-50 md:gap-3 px-5 py-5 lg:px-5 h-full min-h-[400px]"
               >
                 <div
                   class="flex h-12 w-12 items-center justify-center p-0 h-full w-full lg:p-0 zoom-in"
