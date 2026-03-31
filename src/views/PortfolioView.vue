@@ -6,74 +6,65 @@ export default {
       items: [
         {
           id: 1,
-          name: "Python Asteroid Game",
-          imageUrl: "asteroids",
-          status:
-            "Asteroids is a space-themed multidirectional shooter arcade game. This was made using pure python and PyGame library.",
-          tech: "Python, PyGame",
-          github: "https://github.com/jonrenzo/Asteroids-Pygame",
+          name: "SingSync",
+          imageUrl: "singsync",
+          status: "A synchronized singing platform that allows users to sing together in real-time with latency correction and shared audio controls.",
+          tech: "React, Node.js, Upstash Redis",
+          github: "https://github.com/jonrenzo/SingSync",
           demo: "",
         },
         {
           id: 2,
-          name: "Java Sorting Visualizer",
-          imageUrl: "sorting",
-          status:
-            "Java Sorting Visualizer is a desktop application that visualizes the sorting algorithms. This was made using Java Swing.",
-          tech: "Java, Swing",
-          github: "https://github.com/jonrenzo/Java-Sorting-Visualizer",
+          name: "HiLiSiBu",
+          imageUrl: "hilisibu",
+          status: "A mobile app about Noli Me Tangere featuring interactive stories and educational activities designed to help students learn and engage with the classic novel.",
+          tech: "React Native, SQLite",
+          github: "https://github.com/jonrenzo/HiLiSiBu",
           demo: "",
         },
         {
           id: 3,
-          name: "Philip And Aurea",
-          imageUrl: "par",
-          status:
-            "PHP Web Application that helps user rent/buy property and manage using the app.",
-          tech: "PHP, Bootstrap, HTML, TailwindCSS, Python",
-          github: "https://github.com/jonrenzo/Philip-And-Aurea",
+          name: "QuestCommute",
+          imageUrl: "questcommute",
+          status: "An innovative commuting application that gamifies daily travel with quests, rewards, and route optimization for better productivity.",
+          tech: "React Native, Supabase, Google Maps API",
+          github: "https://github.com/jonrenzo/QuestCommute",
           demo: "",
         },
         {
           id: 4,
-          name: "Mojito Entertainment",
-          imageUrl: "mojit",
-          status:
-            "This app is a modern web application designed to enhance your movie-going experience. " +
-              "With a seamless and secure booking system, users can easily reserve their seats and enjoy hassle-free payments",
-          tech: "PHP, HTML, TailwindCSS",
-          github: "https://github.com/jonrenzo/Movie-Reservation-Finals",
+          name: "MediSync System",
+          imageUrl: "medisync",
+          status: "A healthcare management system that streamlines patient records, appointments, and medical billing with secure data handling.",
+          tech: "React, Node.js, Supabase",
+          github: "https://github.com/jonrenzo/medisync-system",
           demo: "",
         },
         {
           id: 5,
-          name: "KRY Banking",
-          imageUrl: "kry",
-          status:
-            "a simple banking system using VB.NET that lets users manage their accounts and transactions easily. " +
-              "All the data, like account details and transaction history, is stored in a database.",
-          tech: "VB.NET",
-          github: "https://github.com/jonrenzo/VBNET_KRY_BANKING",
+          name: "Telcovantage Site Map Reader",
+          imageUrl: "telcovantage",
+          status: "A specialized tool for reading and visualizing telecom site maps with advanced mapping and geospatial analysis features.",
+          tech: "Python, React, TrOcr, FastAPI",
+          github: "https://github.com/jonrenzo/Telcovantage-Site-Map-Reader",
           demo: "",
         },
         {
           id: 6,
-          name: "Tech Talk",
-          imageUrl: "tech_talk",
-          status: "This voice assistant app, developed using MIT App Inventor, enables users to control basic home " +
-              "appliances such as lights and fans via Wi-Fi.",
-          tech: "MIT App Inventor",
-          github: "https://github.com/jonrenzo/Tech-Talk",
+          name: "The Council",
+          imageUrl: "thecouncil",
+          status: "A collaborative decision-making platform for councils and organizations to manage proposals, voting, and meeting minutes efficiently.",
+          tech: "React, Ollama",
+          github: "https://github.com/jonrenzo/the-council",
           demo: "",
         },
         {
           id: 7,
-          name: "BMI Calculator Application",
-          imageUrl: "bmi",
-          status: "Built with Android Studio, this sleek app features an intuitive UI that calculates your " +
-              "Body Mass Index (BMI) based on your personal information.",
-          tech: "Android Studio, Java, XML",
-          github: "https://github.com/jonrenzo/BMI-Calculator",
+          name: "4PSuriBasa",
+          imageUrl: "sibaba",
+          status: "A mobile app featuring various stories with interactive activities designed to enhance reading comprehension and language skills for students.",
+          tech: "React Native, SQLite",
+          github: "https://github.com/jonrenzo/4PSuriBasa",
           demo: "",
         },
         {
@@ -88,6 +79,78 @@ export default {
         },
         {
           id: 9,
+          name: "Philip And Aurea",
+          imageUrl: "par",
+          status:
+            "PHP Web Application that helps user rent/buy property and manage using the app.",
+          tech: "PHP, Bootstrap, HTML, TailwindCSS, Python",
+          github: "https://github.com/jonrenzo/Philip-And-Aurea",
+          demo: "",
+        },
+        {
+          id: 10,
+          name: "KRY Banking",
+          imageUrl: "kry",
+          status:
+            "a simple banking system using VB.NET that lets users manage their accounts and transactions easily. " +
+              "All the data, like account details and transaction history, is stored in a database.",
+          tech: "VB.NET",
+          github: "https://github.com/jonrenzo/VBNET_KRY_BANKING",
+          demo: "",
+        },
+        {
+          id: 11,
+          name: "Tech Talk",
+          imageUrl: "tech_talk",
+          status: "This voice assistant app, developed using MIT App Inventor, enables users to control basic home " +
+              "appliances such as lights and fans via Wi-Fi.",
+          tech: "MIT App Inventor",
+          github: "https://github.com/jonrenzo/Tech-Talk",
+          demo: "",
+        },
+        {
+          id: 12,
+          name: "BMI Calculator Application",
+          imageUrl: "bmi",
+          status: "Built with Android Studio, this sleek app features an intuitive UI that calculates your " +
+              "Body Mass Index (BMI) based on your personal information.",
+          tech: "Android Studio, Java, XML",
+          github: "https://github.com/jonrenzo/BMI-Calculator",
+          demo: "",
+        },
+        {
+          id: 13,
+          name: "Mojito Entertainment",
+          imageUrl: "mojit",
+          status:
+            "This app is a modern web application designed to enhance your movie-going experience. " +
+              "With a seamless and secure booking system, users can easily reserve their seats and enjoy hassle-free payments",
+          tech: "PHP, HTML, TailwindCSS",
+          github: "https://github.com/jonrenzo/Movie-Reservation-Finals",
+          demo: "",
+        },
+        {
+          id: 14,
+          name: "Java Sorting Visualizer",
+          imageUrl: "sorting",
+          status:
+            "Java Sorting Visualizer is a desktop application that visualizes the sorting algorithms. This was made using Java Swing.",
+          tech: "Java, Swing",
+          github: "https://github.com/jonrenzo/Java-Sorting-Visualizer",
+          demo: "",
+        },
+        {
+          id: 15,
+          name: "Python Asteroid Game",
+          imageUrl: "asteroids",
+          status:
+            "Asteroids is a space-themed multidirectional shooter arcade game. This was made using pure python and PyGame library.",
+          tech: "Python, PyGame",
+          github: "https://github.com/jonrenzo/Asteroids-Pygame",
+          demo: "",
+        },
+        {
+          id: 16,
           name: "Work in Progress",
           imageUrl: "inprogress",
           status: "More projects in progress. Please check back later.",
@@ -135,6 +198,7 @@ export default {
                     data-nimg="1"
                     class="drop-shadow-xl rounded rounded-xl"
                     :src="'/img/portfolio-' + item.imageUrl + '.png'"
+                      @error="$event.target.src = '/img/portfolio-default.png'"
                   />
                 </div>
                 <div
