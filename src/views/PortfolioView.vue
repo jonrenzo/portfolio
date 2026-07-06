@@ -51,6 +51,15 @@ export default {
         },
         {
           id: 6,
+          name: "TelcoVantage ERP System",
+          imageUrl: "tvph-erp-system",
+          status: "An internal operations ERP platform for TelcoVantage Philippines covering vendor accreditation, procurement, CRM, projects, finance, HR, assets, documents, reports, and AI-assisted workflows.",
+          tech: "Next.js, React, TypeScript, Tailwind CSS, Supabase, Gemini",
+          github: "https://github.com/jonrenzo/tvph-erp-system",
+          demo: "",
+        },
+        {
+          id: 7,
           name: "The Council",
           imageUrl: "thecouncil",
           status: "A collaborative decision-making platform for councils and organizations to manage proposals, voting, and meeting minutes efficiently.",
@@ -59,7 +68,7 @@ export default {
           demo: "",
         },
         {
-          id: 7,
+          id: 8,
           name: "4PSuriBasa",
           imageUrl: "sibaba",
           status: "A mobile app featuring various stories with interactive activities designed to enhance reading comprehension and language skills for students.",
@@ -68,7 +77,7 @@ export default {
           demo: "",
         },
         {
-          id: 8,
+          id: 9,
           name: "PapaBibs Kitchen",
           imageUrl: "pbk",
           status: "A food ordering system with an admin page for a small food business. " +
@@ -78,7 +87,7 @@ export default {
           demo: "https://papabibs-kitchen-main-n1hnmi.laravel.cloud/",
         },
         {
-          id: 9,
+          id: 10,
           name: "Philip And Aurea",
           imageUrl: "par",
           status:
@@ -88,7 +97,7 @@ export default {
           demo: "",
         },
         {
-          id: 10,
+          id: 11,
           name: "KRY Banking",
           imageUrl: "kry",
           status:
@@ -99,7 +108,7 @@ export default {
           demo: "",
         },
         {
-          id: 11,
+          id: 12,
           name: "Tech Talk",
           imageUrl: "tech_talk",
           status: "This voice assistant app, developed using MIT App Inventor, enables users to control basic home " +
@@ -109,7 +118,7 @@ export default {
           demo: "",
         },
         {
-          id: 12,
+          id: 13,
           name: "BMI Calculator Application",
           imageUrl: "bmi",
           status: "Built with Android Studio, this sleek app features an intuitive UI that calculates your " +
@@ -119,7 +128,7 @@ export default {
           demo: "",
         },
         {
-          id: 13,
+          id: 14,
           name: "Mojito Entertainment",
           imageUrl: "mojit",
           status:
@@ -130,7 +139,7 @@ export default {
           demo: "",
         },
         {
-          id: 14,
+          id: 15,
           name: "Java Sorting Visualizer",
           imageUrl: "sorting",
           status:
@@ -140,7 +149,7 @@ export default {
           demo: "",
         },
         {
-          id: 15,
+          id: 16,
           name: "Python Asteroid Game",
           imageUrl: "asteroids",
           status:
@@ -150,7 +159,7 @@ export default {
           demo: "",
         },
         {
-          id: 16,
+          id: 17,
           name: "Work in Progress",
           imageUrl: "inprogress",
           status: "More projects in progress. Please check back later.",
