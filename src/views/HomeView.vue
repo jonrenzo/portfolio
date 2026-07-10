@@ -33,7 +33,7 @@
               :key="activeAvatar"
               class="avatar"
               :src="activeAvatar"
-              :alt="profile.name"
+              :alt="`Portrait of ${profile.name}, ${profile.role}`"
             />
           </Transition>
         </div>
@@ -58,7 +58,7 @@
           <div class="project-media">
             <img
               :src="projectImage(project)"
-              :alt="project.name"
+              :alt="`${project.name} project preview`"
               loading="lazy"
               @error="setFallbackImage"
             />

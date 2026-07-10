@@ -8,7 +8,7 @@ export const profile = {
     dark: "/img/headshot-dark.png",
   },
   summary:
-    "Computer Science student at Pamantasan ng Lungsod ng Pasig who builds practical, usable web and mobile applications with a focus on clean interfaces and reliable workflows.",
+    "Computer Science graduate at Pamantasan ng Lungsod ng Pasig who builds practical, usable web and mobile applications with a focus on clean interfaces and reliable workflows.",
   focus: ["Web development", "Mobile applications", "Applied systems"],
   resumeUrl: "/files/Resume.pdf",
   githubUsername: "jonrenzo",
@@ -88,7 +88,14 @@ export const projects = [
     imageUrl: "tvph-erp-system",
     description:
       "An internal operations ERP platform for TelcoVantage Philippines covering vendor accreditation, procurement, CRM, projects, finance, HR, assets, documents, reports, and AI-assisted workflows.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Gemini"],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Gemini",
+    ],
     github: "https://github.com/jonrenzo/tvph-erp-system",
     demo: "",
     featured: true,
@@ -230,7 +237,7 @@ export const tools = [
 ];
 
 export const education = {
-  title: "Computer Science Student",
+  title: "Computer Science Graduate",
   organization: "Pamantasan ng Lungsod ng Pasig",
   description:
     "Focused on web development, mobile applications, databases, and practical software systems built through coursework and personal projects.",

@@ -6,25 +6,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    meta: { title: 'Home' }
+    meta: { title: 'Jon Renzo Toledo — Full Stack Engineer' }
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue'),
-    meta: { title: 'About' }
-  },
-  {
-    path: '/portfolio',
-    name: 'portfolio',
-    component: () => import('../views/PortfolioView.vue'),
-    meta: { title: 'Portfolio' }
-  },
-  {
-    path: '/read/:slug/:id',
-    name: 'articleDetail',
-    component: () => import('../views/ArticleView.vue'),
-    meta: { title: 'Blog' }
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
   }
 ]
 
@@ -34,7 +20,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title + ' - ./renzo'; 
+  document.title = to.meta.title || 'Jon Renzo Toledo — Full Stack Engineer';
   next();
 });
 

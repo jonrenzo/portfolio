@@ -1,5 +1,6 @@
 <template>
   <div class="app-shell" :data-theme="theme">
+    <a class="skip-link" href="#intro">Skip to content</a>
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary navigation">
         <router-link class="brand" to="/">{{ profile.handle }}</router-link>
@@ -27,11 +28,11 @@
 
     <router-view />
 
-    <footer class="mobile-nav" aria-label="Mobile navigation">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
       <a v-for="section in mobileSections" :key="section.href" :href="section.href">
         {{ section.label }}
       </a>
-    </footer>
+    </nav>
 
     <div
       v-if="themeReveal"
@@ -225,9 +226,28 @@ button {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+
+.skip-link {
+  background: var(--button-bg);
+  border-radius: 0.5rem;
+  color: var(--button-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  left: 1rem;
+  padding: 0.6rem 1rem;
+  position: fixed;
+  text-decoration: none;
+  top: -100%;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 ::-webkit-scrollbar {
