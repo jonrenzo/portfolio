@@ -1,6 +1,5 @@
 <template>
   <div class="app-shell" :data-theme="theme">
-    <a class="skip-link" href="#intro">Skip to content</a>
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary navigation">
         <router-link class="brand" to="/">{{ profile.handle }}</router-link>
@@ -54,7 +53,7 @@ export default {
     return {
       profile,
       sections,
-      theme: 'dark',
+      theme: 'light',
       themeReveal: null,
       revealTimeout: null,
     };
@@ -98,7 +97,8 @@ export default {
         return savedTheme;
       }
 
-      return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      // Default to light mode when no preference has been saved.
+      return 'light';
     },
     applyTheme(theme) {
       document.documentElement.dataset.theme = theme;

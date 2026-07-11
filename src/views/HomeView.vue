@@ -240,12 +240,12 @@ export default {
       metrics,
       copyLabel: 'Copy GitHub',
       githubGraphFailed: false,
-      activeTheme: document.documentElement.dataset.theme || 'dark',
+      activeTheme: document.documentElement.dataset.theme || 'light',
     };
   },
   mounted() {
     this.themeObserver = new MutationObserver(() => {
-      this.activeTheme = document.documentElement.dataset.theme || 'dark';
+      this.activeTheme = document.documentElement.dataset.theme || 'light';
     });
     this.themeObserver.observe(document.documentElement, {
       attributes: true,
@@ -345,9 +345,9 @@ export default {
 
 .intro-copy h1 {
   color: var(--text-primary);
-  font-family: "Geist Pixel", "Poppins", ui-monospace, monospace;
+  font-family: "Geist", "Poppins", ui-sans-serif, system-ui, sans-serif;
   font-size: clamp(2.9rem, 8vw, 6.25rem);
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 1.05;
   max-width: 11ch;
@@ -422,13 +422,17 @@ export default {
 
 .avatar-frame {
   animation: avatarIdle 7s ease-in-out infinite;
-  border-radius: 0.8rem;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.9rem;
   box-shadow: 0 0 0 rgba(248, 113, 113, 0);
   overflow: hidden;
+  padding: 0.4rem;
 }
 
 .avatar {
   aspect-ratio: 1;
+  border-radius: 0.55rem;
   display: block;
   object-fit: cover;
   width: 100%;
