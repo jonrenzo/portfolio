@@ -58,7 +58,7 @@ export const projects = [
     tech: ["React Native", "Supabase", "Google Maps API"],
     github: "https://github.com/jonrenzo/QuestCommute",
     demo: "",
-    featured: true,
+    featured: false,
   },
   {
     id: 4,
@@ -210,6 +210,17 @@ export const projects = [
     demo: "",
     featured: false,
   },
+  {
+    id: 17,
+    name: "Enygma",
+    imageUrl: "enygma",
+    description:
+      "Enygma is a Rust terminal workspace I built to start code projects faster and keep secrets safe. It scans one projects folder, lets me pick a project and launch tools from a checklist, and keeps passwords and env vars in an encrypted local vault.",
+    tech: ["Rust", "Ratatui"],
+    github: "",
+    demo: "",
+    featured: true,
+  },
 ];
 
 export const stack = [
@@ -219,6 +230,7 @@ export const stack = [
   "VueJS",
   "ReactJS",
   "React Native",
+  "Rust",
   "Laravel",
   "TailwindCSS",
   "Python",
@@ -248,7 +260,7 @@ export const experiences = [
     company: "TelcoVantage Philippines",
     location: "Taguig",
     role: "Software Developer",
-    period: "Feb 2026 - Jun 2026",
+    period: "Feb 2026 - Sept 2026",
     bullets: [
       "Built an OCR/CNN-based plan-analysis tool with a Flask backend and Next.js/TypeScript frontend that automatically reads strand numbers and detects equipment shapes from DXF/PDF as-built engineering drawings.",
       "Designed a versioned REST API (/api/v1) exposing OCR results, pole IDs, and equipment detection data for integration with external GIS and billing systems.",

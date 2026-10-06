@@ -1,7 +1,7 @@
 <template>
   <main class="portfolio-home" id="intro">
     <section class="intro-grid section-block">
-      <div class="intro-copy">
+      <div class="intro-copy" v-reveal>
         <p class="eyebrow">{{ profile.handle }} / {{ profile.location }}</p>
         <h1>{{ profile.name }}</h1>
         <p class="role">{{ profile.role }}</p>
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <aside class="profile-panel" aria-label="Profile summary">
+      <aside class="profile-panel" v-reveal="120" aria-label="Profile summary">
         <div class="avatar-frame">
           <Transition name="avatar-theme" mode="out-in">
             <img
@@ -44,17 +44,17 @@
       </aside>
     </section>
 
-    <section class="metrics-grid" aria-label="Portfolio proof metrics">
-      <div v-for="metric in metrics" :key="metric.label" class="metric-item">
-        <strong>{{ metric.value }}</strong>
+    <section ref="metricsGrid" class="metrics-grid" v-reveal aria-label="Portfolio proof metrics">
+      <div v-for="(metric, index) in metrics" :key="metric.label" class="metric-item" v-reveal="index * 90">
+        <strong>{{ displayValues[index] }}+</strong>
         <span>{{ metric.label }}</span>
       </div>
     </section>
 
-    <section class="section-block" id="projects">
+    <section class="section-block" v-reveal id="projects">
       <SectionHeading number="01" title="Featured Projects" />
       <div class="featured-grid">
-        <article v-for="(project, index) in featuredProjects" :key="project.id" class="project-card">
+        <article v-for="(project, index) in featuredProjects" :key="project.id" class="project-card" v-reveal="index * 80">
           <div class="project-media">
             <img
               :src="projectImage(project)"
@@ -91,7 +91,7 @@
       </details>
     </section>
 
-    <section class="section-block" id="stack">
+    <section class="section-block" v-reveal id="stack">
       <SectionHeading number="02" title="Stack" />
       <div class="stack-layout">
         <div>
@@ -109,7 +109,7 @@
       </div>
     </section>
 
-    <section class="section-block" id="experience">
+    <section class="section-block" v-reveal id="experience">
       <SectionHeading number="03" title="Experience" />
       <div class="experience-list">
         <details
@@ -136,7 +136,7 @@
       </div>
     </section>
 
-    <section class="section-block" id="education">
+    <section class="section-block" v-reveal id="education">
       <SectionHeading number="04" title="Education & Focus" />
       <div class="timeline-item">
         <p class="eyebrow">{{ education.organization }}</p>
@@ -145,7 +145,7 @@
       </div>
     </section>
 
-    <section class="section-block" id="github">
+    <section class="section-block" v-reveal id="github">
       <SectionHeading number="05" title="GitHub" />
       <div class="github-panel">
         <div class="github-panel-header">
@@ -176,7 +176,7 @@
       </div>
     </section>
 
-    <section class="section-block contact-section" id="contact">
+    <section class="section-block contact-section" v-reveal id="contact">
       <SectionHeading number="06" title="Contact" />
       <div class="contact-grid">
         <div>
@@ -238,6 +238,8 @@ export default {
       education,
       experiences,
       metrics,
+      displayValues: metrics.map(() => 0),
+      metricsDone: false,
       copyLabel: 'Copy GitHub',
       githubGraphFailed: false,
       activeTheme: document.documentElement.dataset.theme || 'light',
@@ -251,10 +253,35 @@ export default {
       attributes: true,
       attributeFilter: ['data-theme'],
     });
+
+    // ponytail: count metrics up once when they scroll into view, no lib
+    const grid = this.$refs.metricsGrid;
+    if (!grid) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.displayValues = this.metrics.map((metric) => metric.value);
+      this.metricsDone = true;
+      return;
+    }
+    this.metricsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.metricsDone) {
+            this.metricsDone = true;
+            this.animateMetrics();
+            this.metricsObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    this.metricsObserver.observe(grid);
   },
   beforeUnmount() {
     if (this.themeObserver) {
       this.themeObserver.disconnect();
+    }
+    if (this.metricsObserver) {
+      this.metricsObserver.disconnect();
     }
   },
   computed: {
@@ -270,7 +297,7 @@ export default {
         'TelcoVantage ERP System',
         'Telcovantage Site Map Reader',
         'MediSync System',
-        'QuestCommute',
+        'Enygma',
       ];
 
       return featuredOrder
@@ -282,6 +309,19 @@ export default {
     },
   },
   methods: {
+    animateMetrics() {
+      const duration = 1200;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        this.displayValues = this.metrics.map((metric) => Math.round(metric.value * eased));
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      };
+      requestAnimationFrame(tick);
+    },
     isExternal(href) {
       return /^https?:\/\//.test(href);
     },
@@ -520,6 +560,7 @@ export default {
   color: var(--text-primary);
   display: block;
   font-size: 2rem;
+  font-variant-numeric: tabular-nums;
   line-height: 1;
 }
 

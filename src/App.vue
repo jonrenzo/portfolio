@@ -1,5 +1,27 @@
 <template>
   <div class="app-shell" :data-theme="theme">
+    <div class="bg-layers" aria-hidden="true">
+      <DotGridBackground
+        class="bg-dots"
+        :dot-size="2"
+        :gap="16"
+        base-color="#4a4a4a"
+        active-color="#ef4444"
+        :proximity="120"
+        :shock-radius="200"
+        :shock-strength="9"
+        :resistance="750"
+        :return-duration="1.5"
+      />
+      <GlowCursor
+        v-if="allowEffects"
+        class="bg-glow"
+        :color="glowColor"
+        :secondary-color="glowSecondary"
+        :trail-length="40"
+        :trail-width="8"
+      />
+    </div>
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary navigation">
         <router-link class="brand" to="/">{{ profile.handle }}</router-link>
@@ -46,9 +68,15 @@
 <script>
 import { profile } from '@/data/portfolio';
 import { sections } from '@/data/navigation';
+import DotGridBackground from '@/components/DotGridBackground.vue';
+import GlowCursor from '@/components/GlowCursor.vue';
 
 export default {
   name: 'App',
+  components: {
+    DotGridBackground,
+    GlowCursor,
+  },
   data() {
     return {
       profile,
@@ -56,6 +84,7 @@ export default {
       theme: 'light',
       themeReveal: null,
       revealTimeout: null,
+      allowEffects: true,
     };
   },
   computed: {
@@ -69,6 +98,12 @@ export default {
     },
     themeIcon() {
       return this.theme === 'dark' ? '☀' : '☾';
+    },
+    glowColor() {
+      return this.theme === 'dark' ? '#fca5a5' : '#dc2626';
+    },
+    glowSecondary() {
+      return this.theme === 'dark' ? '#f87171' : '#b91c1c';
     },
     themeRevealStyle() {
       if (!this.themeReveal) {
@@ -85,6 +120,12 @@ export default {
   created() {
     this.theme = this.getInitialTheme();
     this.applyTheme(this.theme);
+  },
+  mounted() {
+    // ponytail: skip GPU-heavy cursor on touch devices or reduced motion
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const coarse = window.matchMedia('(pointer: coarse)').matches;
+    this.allowEffects = !reduced && !coarse;
   },
   beforeUnmount() {
     window.clearTimeout(this.revealTimeout);
@@ -316,21 +357,95 @@ summary:focus-visible {
   --scroll-thumb: #a8a29e;
 }
 
-.app-shell::before {
-  background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
-  background-position: 0 0;
-  background-size: 22px 22px;
-  content: "";
+.app-shell > .bg-layers {
   inset: 0;
-  opacity: 0.95;
+  overflow: hidden;
   pointer-events: none;
   position: fixed;
   z-index: 0;
 }
 
+.bg-dots {
+  height: 100%;
+  inset: 0;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+}
+
+.app-shell[data-theme="light"] .bg-dots {
+  opacity: 0.45;
+}
+
+.bg-glow {
+  height: 100%;
+  inset: 0;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+}
+
 .app-shell > * {
   position: relative;
   z-index: 2;
+}
+
+.app-shell > .bg-layers {
+  z-index: 0;
+}
+
+/* Scroll reveal (driven by v-reveal directive in main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 600ms ease,
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover lift upgrades */
+.project-card .project-media img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover {
+  box-shadow: 0 1rem 2.5rem rgba(248, 113, 113, 0.12);
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.04);
+}
+
+.focus-list span,
+.pill-grid li,
+.tech-list li {
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.focus-list span:hover,
+.pill-grid li:hover,
+.tech-list li:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.button-link:hover {
+  transform: translateY(-2px);
+}
+
+.experience-card:hover {
+  transform: translateY(-1px);
 }
 
 .site-header {
@@ -466,6 +581,15 @@ summary:focus-visible {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .bg-glow {
+    display: none;
   }
 }
 
